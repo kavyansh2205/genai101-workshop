@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #4CAF50; /* Crocodile green */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            background-color: #388E3C;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2E7D32;
+        }
+
+        .fact-display {
+            font-size: 18px;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Crocodile Facts</h1>
+        <button id="factButton">Show a Crocodile Fact</button>
+        <div id="factDisplay" class="fact-display"></div>
+    </div>
+    <script>
+        const facts = [
+            "Crocodiles have been around for over 200 million years.",
+            "Crocodiles can hold their breath underwater for up to an hour.",
+            "The largest crocodile species is the saltwater crocodile, which can grow up to 23 feet long.",
+            "Crocodiles have a powerful bite, with a force of over 3,700 pounds per square inch.",
+            "Crocodiles can replace each of their 80 teeth up to 50 times in their lifetime.",
+            "Crocodiles are excellent swimmers and can reach speeds of up to 20 miles per hour in water.",
+            "Crocodiles have a special valve in their throat that allows them to open their mouths underwater without drowning.",
+            "Crocodiles communicate with each other through vocalizations, such as growls and hisses.",
+            "Crocodiles have a lifespan of 70 to 100 years in the wild.",
+            "Crocodiles are cold-blooded reptiles and rely on external heat sources to regulate their body temperature."
+        ];
+
+        document.getElementById('factButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const factDisplay = document.getElementById('factDisplay');
+            factDisplay.style.opacity = 0;
+            setTimeout(() => {
+                factDisplay.textContent = facts[randomIndex];
+                factDisplay.style.opacity = 1;
+            }, 300);
+        });
+    </script>
+</body>
+</html>
